@@ -1,0 +1,10 @@
+print("Hello world")
+#print(input("where are you going?"))
+# num_first = input("enter first number: ")
+# num_second = input("enter second number: ")
+# sum = num_first+num_second
+# print("your sum: "+sum)
+two_digit_number = input()
+num_f = int(two_digit_number[0])
+num_s = int(two_digit_number[1])
+print(num_f+num_s)
