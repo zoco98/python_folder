@@ -8,7 +8,6 @@ game_over = False
 random_word = random.choice(word_list)
 word_length = len(random_word)
 user_life = word_length
-print(random_word)
 
 for n in range(0,word_length):
     placeholder+="_"
@@ -34,6 +33,7 @@ while not game_over and user_life>0:
 
 if user_life==0 and not game_over:
     print("you loser!!!")
+    print(random_word)
     
     
 
