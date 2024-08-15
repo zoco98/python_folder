@@ -36,28 +36,21 @@ else:
     #processing input
     def ciser_code(key, alphabet, cipher_text, letter, choice):
         word_index = alphabet.index(letter)
-        if choice.lower()=="encrypt":
-            new_index = encrypt(key, word_index)
-        elif choice.lower()=="decrypt":
-            new_index = decrypt(key, word_index)
-        else:
-            print("invalid choice")
+        new_index = encrypt_decrypt(key, word_index, choice)
         cipher_text += alphabet[new_index]
         return cipher_text
 
     def decrypt(key, word_index):
-        if (len(alphabet)-word_index)<key:
-            return word_index-key
-        else:
-            key = word_index-key
-            return key%len(alphabet)
+        key = word_index-key
+        return key%len(alphabet)
 
-    def encrypt(key, word_index):
-        if (len(alphabet)-word_index)>key:
-            return word_index+key
+    def encrypt_decrypt(key, word_index, choice):
+        if choice.lower()=="encrypt":
+            key *= 1
         else:
-            key = word_index+key
-            return key%len(alphabet)
+            key *= -1
+        key = word_index+key
+        return key%len(alphabet)
 
     for letter in word:
         if letter != " " and letter in alphabet:
