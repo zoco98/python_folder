@@ -17,3 +17,22 @@ def calculate_love_score(male, female):
     print(love_score)
         
 calculate_love_score(male = "Kanye West", female="Kim Kardashian")
+
+def outer_function(a, b):
+    def inner_function(c, d):
+        return c + d
+    return inner_function(a, b)
+ 
+result = outer_function(5, 10)
+print(result)
+
+#none--output--this will not give any error just it not gonna print any output
+def my_function(a):
+    if a < 40:
+        return
+        print("Terrible")
+    if a < 80:
+        return "Pass"
+    else:
+        return "Great"
+print(my_function(25))
